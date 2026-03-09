@@ -22,7 +22,8 @@ void insertEnd(int arr[], int &length, int capacity, int value)
 {
     if (length < capacity)
     {
-        arr[length - 1] = value;
+        arr[length] = value;
+        length++;
     }
 }
 
