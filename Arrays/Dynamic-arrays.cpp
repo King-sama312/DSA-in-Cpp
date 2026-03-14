@@ -1,3 +1,6 @@
+// We will be implementing <vector> of C++ from scratch
+
+
 #include <iostream>
 #include <stdexcept>
 using namespace std;
