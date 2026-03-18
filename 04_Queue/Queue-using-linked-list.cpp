@@ -59,7 +59,7 @@ public:
             cout << curr->val_ << " ";
             curr = curr->next;
         }
-        cout<< endl;
+        cout << endl;
     }
 
     ~Queue()

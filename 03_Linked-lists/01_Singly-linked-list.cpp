@@ -16,10 +16,11 @@ public:
 
 class LinkedList
 {
-public:
+private:
     ListNode *head;
     ListNode *tail;
 
+public:
     LinkedList()
     {
         head = new ListNode(-1);
@@ -46,26 +47,30 @@ public:
         tail = curr;
     }
 
-    void removeByIndex(int index) {
-    ListNode* curr = head;
-    
-    for (int i = 0; i < index && curr->next != nullptr; i++) {
-        curr = curr->next;
-    }
+    void removeByIndex(int index)
+    {
+        ListNode *curr = head;
 
-    if (curr->next != nullptr) {
-        ListNode* temp = curr->next;
-        curr->next = curr->next->next;
-        
-        // Special case: if we deleted the actual tail, 
-        // we must move the tail pointer back to curr!
-        if (temp == tail) {
-            tail = curr;
+        for (int i = 0; i < index && curr->next != nullptr; i++)
+        {
+            curr = curr->next;
         }
 
-        delete temp; 
+        if (curr->next != nullptr)
+        {
+            ListNode *temp = curr->next;
+            curr->next = curr->next->next;
+
+            // Special case: if we deleted the actual tail,
+            // we must move the tail pointer back to curr!
+            if (temp == tail)
+            {
+                tail = curr;
+            }
+
+            delete temp;
+        }
     }
-}
     void print()
     {
         ListNode *curr = head->next;
@@ -76,10 +81,12 @@ public:
         }
     }
 
-    ~LinkedList(){
-        ListNode*curr = head;
-        while(curr != nullptr){
-            ListNode* temp = curr;
+    ~LinkedList()
+    {
+        ListNode *curr = head;
+        while (curr != nullptr)
+        {
+            ListNode *temp = curr;
             curr = curr->next;
             delete temp;
         }

@@ -16,10 +16,11 @@ public:
 
 class DoublyLinkedList
 {
-public:
+private:
     ListNode *head;
     ListNode *tail;
 
+public:
     DoublyLinkedList()
     {
         head = new ListNode(-1);
