@@ -38,6 +38,11 @@ void mergeSort(vector<int> &arr, int s, int e)
 }
 
 int main(){
-    
+    vector<int> arr = {38, 27, 43, 3, 9, 82, 10};
+    int n = arr.size();
+    mergeSort(arr, 0, n - 1);
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+        
     return 0;
 }
