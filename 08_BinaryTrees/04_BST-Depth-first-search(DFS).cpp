@@ -30,6 +30,8 @@ TreeNode *insert(TreeNode *root, int val)
     return root;
 }
 
+// center -> left -> right
+
 void DFS_PreOrder(TreeNode *root){
     if(!root) return;
    
@@ -38,12 +40,23 @@ void DFS_PreOrder(TreeNode *root){
     DFS_PreOrder(root->right);
 }
 
+// left -> center -> right
+
 void DFS_InOrder(TreeNode *root){
     if(!root) return;
    
     DFS_InOrder(root->left);
     cout<< root-> val_<<" ";
     DFS_InOrder(root->right);
+}
+
+// left -> right -> center
+void DFS_PostOrder(TreeNode *root){
+    if(!root) return;
+   
+    DFS_PostOrder(root->left);
+    DFS_PostOrder(root->right);
+    cout<< root-> val_<<" ";
 }
 
 int main()
